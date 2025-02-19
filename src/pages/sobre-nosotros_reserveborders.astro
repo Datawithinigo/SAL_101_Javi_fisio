@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Sobre Nosotros - Fisioterapia">
+  <div class="min-h-screen bg-white relative overflow-hidden">
+    <div class="rotating-background"></div>
+    <div class="container mx-auto px-4 py-12 relative z-10">
+      <Header />
+
+      <main>
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl font-light text-green-800 mb-12 text-center">
+            Sobre Nosotros
+          </h1>
+
+          <div class="space-y-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-green-100">
+              <h2 class="text-2xl text-green-800 mb-4">Nuestra Historia</h2>
+              <p class="text-gray-600 mb-4">
+                Con más de 15 años de experiencia en el campo de la fisioterapia, nuestro centro se ha convertido en un referente en el tratamiento y la rehabilitación de pacientes. Fundado con la visión de proporcionar una atención personalizada y de alta calidad, hemos ayudado a miles de personas a recuperar su movilidad y bienestar.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-green-100">
+              <h2 class="text-2xl text-green-800 mb-4">Nuestro Equipo</h2>
+              <p class="text-gray-600 mb-4">
+                Contamos con un equipo de profesionales altamente cualificados, cada uno especializado en diferentes áreas de la fisioterapia. Nuestro compromiso con la formación continua nos permite ofrecer los tratamientos más actualizados y efectivos.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div>
+                  <h3 class="text-xl text-green-800 mb-2">Especialidades</h3>
+                  <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>Fisioterapia Deportiva</li>
+                    <li>Rehabilitación Neurológica</li>
+                    <li>Terapia Manual Ortopédica</li>
+                    <li>Fisioterapia Geriátrica</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-xl text-green-800 mb-2">Valores</h3>
+                  <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>Profesionalidad</li>
+                    <li>Compromiso</li>
+                    <li>Empatía</li>
+                    <li>Excelencia</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-green-100">
+              <h2 class="text-2xl text-green-800 mb-4">Instalaciones</h2>
+              <p class="text-gray-600 mb-4">
+                Nuestro centro cuenta con instalaciones modernas y completamente equipadas para ofrecer el mejor servicio posible. Disponemos de:
+              </p>
+              <ul class="list-disc list-inside text-gray-600 space-y-2">
+                <li>Salas de tratamiento individual</li>
+                <li>Gimnasio de rehabilitación</li>
+                <li>Zona de ejercicio terapéutico</li>
+                <li>Equipamiento de última generación</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a
+              href="/contacto"
+              class="inline-block bg-green-700 text-white px-8 py-3 rounded-lg hover:bg-green-800 transition-colors"
+            >
+              Contacta con nosotros
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .rotating-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/fisio-background.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    animation: rotate 60s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// You can add more imports here as needed
+---
+
+<nav class={`header-nav`}>
+  <a href="/" class={`header-logo-link`}>
+    <img src="/Logo_clinicalfisio.png" alt="Fisioterapia" class={`header-logo`} />
+    <h1 class={`header-title`}>
+      <span class={`header-title-clinical`}>CLINICAL</span>
+      <span class={`header-title-fisio`}>FISIO</span>
+    </h1>
+  </a>
+  <div class={`header-links`}>
+    <a href="/" class={`nav-link`}>Inicio</a>
+    <a href="/servicios" class={`nav-link`}>Servicios</a>
+    <a href="/sobre-nosotros" class={`nav-link`}>Sobre Nosotros</a>
+    <a href="/contacto" class={`nav-link`}>Contacto</a>
+  </div>
+</nav>
+
+<style>
+  /* Layout styles using Tailwind */
+  .header-nav {
+    @apply flex justify-between items-center mb-8;
+  }
+
+  .header-logo-link {
+    @apply flex items-center space-x-4;
+  }
+
+  .header-logo {
+    @apply h-12 w-auto;
+  }
+
+  .header-title {
+    @apply text-2xl font-bold;
+  }
+
+  .header-clinical {
+    @apply text-black;
+  }
+
+  /* Color styles using CSS variables */
+  .header-fisio {
+    color: rgb(var(--primary_color));
+    text: bold;
+
+  }
+  .header-title-fisio {
+    color: rgb(var(--primary_color));
+    text: bold;
+
+  }
+
+  .header-links {
+    @apply space-x-6;
+  }
+
+  .nav-link {
+    color: rgb(var(--secondary_color));
+    text: bold;
+  }
+
+  .nav-link:hover {
+    opacity: 0.8;
+    text: bold;
+  }
+</style>

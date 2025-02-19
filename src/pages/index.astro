@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+
+
+const images = [
+  {
+    url: '/fisio-1.jpg',
+    alt: 'Fisioterapia deportiva'
+  },
+  {
+    url: '/fisio-2.jpg',
+    alt: 'Terapia manual'
+  },
+  {
+    url: '/fisio-3.jpg',
+    alt: 'Rehabilitación física'
+  }
+];
+---
+
+
+<Layout>
+  <div class="min-h-screen bg-white relative overflow-hidden">
+    <div class="rotating-background"></div>
+    <div class="container mx-auto px-4 py-12 relative z-10">
+
+      <Header />
+
+      <div class="image-carousel mb-16 relative h-[500px] overflow-hidden rounded-xl">
+        {images.map((image, index) => (
+          <div class={`carousel-slide absolute w-full h-full transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}>
+            <img 
+              src={image.url} 
+              alt={image.alt}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      <main>
+        <div class="max-w-2xl mx-auto text-center">
+          <h1 class="title">Reserva tu sesión de fisioterapia</h1>
+          <p class="text-gray-600 mb-12">
+            Cuidamos de tu salud con profesionalidad y dedicación
+          </p>
+          <a href="/contacto" class="cta-button">Reservar Cita</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
+          <div class="info-card">
+            <h3>Evaluación Inicial</h3>
+            <p>Diagnóstico completo y plan de tratamiento personalizado</p>
+          </div>
+          <div class="info-card">
+            <h3>Terapia Manual</h3>
+            <p>Técnicas especializadas para aliviar el dolor</p>
+          </div>
+          <div class="info-card">
+            <h3>Rehabilitación</h3>
+            <p>Ejercicios específicos para tu recuperación</p>
+          </div>
+        </div>
+
+        <div class="mt-24 location-card">
+          <div class="p-8 text-center">
+            <h2 class="subtitle">Encuéntranos</h2>
+            <p class="text-gray-600 mb-8">Estamos ubicados en el centro de la ciudad, con fácil acceso y parking cercano</p>
+          </div>
+          <div class="h-[400px] w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.4762211389427!2d-1.5999374!3d42.1753133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5a418fc3f97945%3A0xe2e9d59505143b71!2sClinicalFisio%20Arguedas!5e0!3m2!1ses!2ses!4v1708365282647!5m2!1ses!2ses" 
+              width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full">
+            </iframe>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>
+
+<style>
+.title {
+  @apply text-4xl font-light mb-6;
+  color: rgb(var(--secondary_color));
+}
+
+.subtitle {
+  @apply text-3xl font-light mb-4;
+  color: rgb(var(--secondary_color));
+}
+
+.cta-button {
+  @apply inline-block text-white px-8 py-3 rounded-lg hover:transition-colors;
+  background-color: rgb(var(--secondary_color));
+  &:hover {
+    background-color: rgba(var(--secondary_color), 0.9);
+  }
+}
+
+.info-card {
+  @apply bg-white p-6 rounded-lg shadow-sm border;
+  border-color: rgb(var(--secondary_color), 0.2);
+}
+
+.info-card h3 {
+  @apply text-xl mb-4;
+  color: rgb(var(--secondary_color));
+}
+
+.location-card {
+  @apply bg-white rounded-xl overflow-hidden shadow-sm border;
+  border-color: rgb(var(--secondary_color), 0.2);
+}
+
+.rotating-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/fisio-background.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>

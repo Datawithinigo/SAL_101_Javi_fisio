@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Servicios - Fisioterapia">
+  <div class="min-h-screen bg-white relative overflow-hidden">
+    <div class="rotating-background"></div>
+    <div class="container mx-auto px-4 py-12 relative z-10">
+      <Header />
+
+      <main>
+        <div class="max-w-4xl mx-auto">
+          <h1 class="title">Nuestros Servicios</h1>
+
+          <div class="space-y-12">
+            <div class="service-card">
+              <h2>Fisioterapia Deportiva</h2>
+              <p>
+                Tratamiento especializado para lesiones deportivas y mejora del rendimiento atlético.
+                Utilizamos técnicas avanzadas de rehabilitación y prevención.
+              </p>
+              <ul>
+                <li>Recuperación de lesiones deportivas</li>
+                <li>Prevención de lesiones</li>
+                <li>Mejora del rendimiento</li>
+                <li>Vendaje funcional y kinesiotaping</li>
+              </ul>
+            </div>
+
+            <div class="service-card">
+              <h2>Terapia Manual</h2>
+              <p>
+                Técnicas manuales específicas para el tratamiento del dolor y la disfunción musculoesquelética.
+              </p>
+              <ul>
+                <li>Masaje terapéutico</li>
+                <li>Movilización articular</li>
+                <li>Liberación miofascial</li>
+                <li>Punción seca</li>
+              </ul>
+            </div>
+
+            <div class="service-card">
+              <h2>Rehabilitación Funcional</h2>
+              <p>
+                Programas personalizados de ejercicios para recuperar la funcionalidad y prevenir recaídas.
+              </p>
+              <ul>
+                <li>Ejercicios terapéuticos</li>
+                <li>Reeducación postural</li>
+                <li>Fortalecimiento muscular</li>
+                <li>Mejora del equilibrio y propiocepción</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a href="/contacto" class="cta-button">
+              Reservar Cita
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .title {
+    @apply text-4xl font-light mb-12 text-center;
+    color: rgb(var(--secondary_color));
+  }
+  
+  .service-card {
+    @apply bg-white p-8 rounded-lg shadow-sm border;
+    border-color: rgb(var(--secondary_color), 0.2);
+  }
+  
+  .service-card h2 {
+    @apply text-2xl mb-4;
+    color: rgb(var(--secondary_color));
+  }
+  
+  .service-card p {
+    @apply text-gray-600 mb-4;
+  }
+  
+  .service-card ul {
+    @apply list-disc list-inside text-gray-600 space-y-2;
+  }
+  
+  .cta-button {
+    @apply inline-block text-white px-8 py-3 rounded-lg hover:transition-colors;
+    background-color: rgb(var(--secondary_color));
+    &:hover {
+      background-color: rgba(var(--secondary_color), 0.9);
+    }
+  }
+  
+  .rotating-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/fisio-background.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    animation: rotate 60s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
